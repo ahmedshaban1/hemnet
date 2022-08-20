@@ -30,7 +30,7 @@ import com.example.hemnetapp.ui.theme.handlePropertyBorder
 @Composable
 fun PropertyItem(item: PropertyModel) {
     ConstraintLayout(modifier = Modifier.fillMaxWidth()) {
-        val (imageCover, title, noneAreaProperty, areaProperty) = createRefs()
+        val (imageCover, title, mergeView) = createRefs()
 
         Image(
             rememberAsyncImagePainter(
@@ -61,24 +61,16 @@ fun PropertyItem(item: PropertyModel) {
             style = MaterialTheme.typography.h5.copy(fontWeight = FontWeight.Bold)
         )
 
-        if (item.type != PropertyType.Area.type) {
-            Box(modifier = Modifier
-                .fillMaxWidth()
-                .constrainAs(noneAreaProperty) {
-                    top.linkTo(title.bottom)
-                    start.linkTo(title.start)
-                }) {
+        Box(modifier = Modifier
+            .fillMaxWidth()
+            .constrainAs(mergeView) {
+                top.linkTo(title.bottom)
+                start.linkTo(title.start)
+            }) {
+            if (item.type != PropertyType.Area.type)
                 NoneAreaProperty(item)
-            }
-        } else if (item.type == PropertyType.Area.type) {
-            Box(modifier = Modifier
-                .fillMaxWidth()
-                .constrainAs(noneAreaProperty) {
-                    top.linkTo(title.bottom)
-                    start.linkTo(title.start)
-                }) {
+            else if (item.type == PropertyType.Area.type)
                 AreaProperty(item)
-            }
         }
 
     }
