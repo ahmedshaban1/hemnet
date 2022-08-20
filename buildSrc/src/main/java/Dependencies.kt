@@ -46,6 +46,8 @@ object Deps {
     val retrofitGsonAdapter by lazy { "com.squareup.retrofit2:converter-gson:${Versions.retrofitGson}" }
     val retrofitScalarsAdapter by lazy { "com.squareup.retrofit2:converter-scalars:${Versions.scalarsAdapter}" }
     val httpLogger by lazy { "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}" }
+    val constraintLayoutCompose by lazy { "androidx.constraintlayout:constraintlayout-compose:${Versions.constraintLayoutCompose}" }
+    val coil by  lazy { "io.coil-kt:coil-compose:${Versions.coil}" }
 
 
 }

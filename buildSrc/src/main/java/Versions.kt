@@ -23,6 +23,8 @@ object Versions {
     const val retrofitGson = "2.6.2"
     const val scalarsAdapter = "2.9.0"
     const val gson = "2.8.5"
-    const val okHttp = "3.12.1"
+    const val okHttp = "4.10.0"
+    const val constraintLayoutCompose = "1.0.1"
+    const val coil = "2.2.0"
 
 }

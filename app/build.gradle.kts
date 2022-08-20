@@ -80,6 +80,9 @@ dependencies {
     implementation(Deps.retrofitGsonAdapter)
     implementation(Deps.httpLogger)
     implementation(Deps.retrofitScalarsAdapter)
+    implementation(Deps.constraintLayoutCompose)
+    implementation(Deps.coil)
+
 
     testImplementation(Deps.testJunit)
     testImplementation(Deps.mockk)

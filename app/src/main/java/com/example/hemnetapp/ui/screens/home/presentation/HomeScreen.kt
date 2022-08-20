@@ -1,6 +1,6 @@
 package com.example.hemnetapp.ui.screens.home.presentation
 
-import android.util.Log
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -16,6 +16,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.hemnetapp.R
+import com.example.hemnetapp.ui.screens.home.presentation.components.PropertyItem
 
 @Composable
 fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
@@ -24,17 +25,15 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
         modifier = Modifier.fillMaxSize(),
         topBar = { CreateTopBar() }
     ) {
-
         LazyColumn(
             Modifier
                 .fillMaxSize()
-                .padding(16.dp)
+                .padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(20.dp)
         ) {
-
-
             if (viewState.homeList.isNotEmpty()) {
                 items(viewState.homeList) { item ->
-                    Text(text = item.area)
+                    PropertyItem(item = item)
                 }
             }
         }
