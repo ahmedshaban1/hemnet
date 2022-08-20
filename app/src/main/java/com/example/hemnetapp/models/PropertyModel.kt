@@ -11,5 +11,7 @@ data class PropertyModel(
     val municipality: String,
     val numberOfRooms: Int,
     val streetAddress: String,
-    val type: String
+    val type: String,
+    val rating:String,
+    val averagePrice:String
 )

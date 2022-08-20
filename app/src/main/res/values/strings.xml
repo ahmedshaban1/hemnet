@@ -3,4 +3,7 @@
     <string name="no_data_found">No data found</string>
     <string name="generic_error">Something went wrong try again later</string>
     <string name="mSquare">%d m\u00B2</string>
+    <string name="days_on_Hemnet">%d dagar</string>
+    <string name="rating">Betyg: %s</string>
+    <string name="average_price">SnittPris: %s</string>
 </resources>
