@@ -2,9 +2,9 @@ package com.example.hemnetapp.remote.utilities
 
 import com.example.hemnetapp.BuildConfig.DEBUG
 import com.example.hemnetapp.remote.mock.MockRequestInterceptor
-import com.example.hemnetapp.remote.utilities.Constants.baseUrl
 import com.example.hemnetapp.remote.requester.RequestHandler
 import com.example.hemnetapp.remote.requester.RequestHandlerImpl
+import com.example.hemnetapp.remote.utilities.Constants.baseUrl
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides

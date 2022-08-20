@@ -2,6 +2,7 @@ package com.example.hemnetapp.ui.screens.home.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.hemnetapp.models.PropertyModel
 import com.example.hemnetapp.remote.errorhandling.IErrorCodes
 import com.example.hemnetapp.remote.utilities.Resource
 import com.example.hemnetapp.ui.screens.home.domain.usecases.GetHomeUserCase
@@ -54,4 +55,11 @@ class HomeViewModel @Inject constructor(
         }
     }
 
+    fun updateSelectedItem(item: PropertyModel) {
+        _viewState.update { state ->
+            state.copy(
+                selectedProperty = item,
+            )
+        }
+    }
 }

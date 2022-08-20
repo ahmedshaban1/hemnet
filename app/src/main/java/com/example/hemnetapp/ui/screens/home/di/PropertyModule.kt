@@ -30,6 +30,4 @@ object PropertyModule {
     @Provides
     fun providesProApi(retrofit: Retrofit): HemnetApi =
         retrofit.create(HemnetApi::class.java)
-
-
 }

@@ -1,3 +1,3 @@
 package com.example.hemnetapp.models
 
-data class HomeResponse(val items:List<PropertyModel>)
+data class HomeResponse(val items: List<PropertyModel>)

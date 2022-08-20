@@ -83,7 +83,6 @@ dependencies {
     implementation(Deps.constraintLayoutCompose)
     implementation(Deps.coil)
 
-
     testImplementation(Deps.testJunit)
     testImplementation(Deps.mockk)
     androidTestImplementation(Deps.androidTestJunit)

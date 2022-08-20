@@ -1,6 +1,7 @@
 package com.example.hemnetapp.ui.screens.home.presentation.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
@@ -28,8 +29,16 @@ import com.example.hemnetapp.ui.theme.Purple200
 import com.example.hemnetapp.ui.theme.handlePropertyBorder
 
 @Composable
-fun PropertyItem(item: PropertyModel) {
-    ConstraintLayout(modifier = Modifier.fillMaxWidth()) {
+fun PropertyItem(
+    item: PropertyModel,
+    onItemClicked: (PropertyModel) -> Unit = {}
+) {
+
+    ConstraintLayout(modifier = Modifier
+        .fillMaxWidth()
+        .clickable {
+            onItemClicked(item)
+        }) {
         val (imageCover, title, mergeView) = createRefs()
 
         Image(
@@ -76,6 +85,8 @@ fun PropertyItem(item: PropertyModel) {
                 AreaProperty(item)
         }
     }
+
+
 }
 
 @Composable
@@ -164,6 +175,6 @@ fun PropertyItemPreview() {
                 rating = "2/5",
                 averagePrice = "1000"
             )
-        )
+        ) {}
     }
 }

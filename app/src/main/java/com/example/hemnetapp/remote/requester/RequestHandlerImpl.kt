@@ -1,10 +1,10 @@
 package com.example.hemnetapp.remote.requester
 
-import com.example.hemnetapp.remote.utilities.ResultWrapper
 import com.example.hemnetapp.remote.errorhandling.ErrorCodes
 import com.example.hemnetapp.remote.errorhandling.ErrorCodes.CONNECTION_ERROR
 import com.example.hemnetapp.remote.errorhandling.ErrorCodes.ERROR_TIME_OUT
 import com.example.hemnetapp.remote.errorhandling.ErrorCodes.GENERIC_ERROR
+import com.example.hemnetapp.remote.utilities.ResultWrapper
 import kotlinx.coroutines.TimeoutCancellationException
 import retrofit2.HttpException
 import java.io.IOException
