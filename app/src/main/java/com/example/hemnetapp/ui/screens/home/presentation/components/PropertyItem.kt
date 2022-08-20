@@ -38,7 +38,8 @@ fun PropertyItem(item: PropertyModel) {
                     .data(item.image)
                     .size(Size.ORIGINAL)
                     .build()
-            ), contentDescription = "Image cover",
+            ),
+            contentDescription = "Image cover",
             modifier = Modifier
                 .fillMaxWidth()
                 .height(200.dp)
@@ -48,31 +49,32 @@ fun PropertyItem(item: PropertyModel) {
                     top.linkTo(parent.top)
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
-
                 },
             contentScale = ContentScale.Crop
         )
 
         Text(
-            text = item.area, modifier = Modifier.constrainAs(title) {
+            text = item.area,
+            modifier = Modifier.constrainAs(title) {
                 top.linkTo(imageCover.bottom, 2.dp)
                 start.linkTo(imageCover.start)
             },
             style = MaterialTheme.typography.h5.copy(fontWeight = FontWeight.Bold)
         )
 
-        Box(modifier = Modifier
-            .fillMaxWidth()
-            .constrainAs(mergeView) {
-                top.linkTo(title.bottom)
-                start.linkTo(title.start)
-            }) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .constrainAs(mergeView) {
+                    top.linkTo(title.bottom)
+                    start.linkTo(title.start)
+                }
+        ) {
             if (item.type != PropertyType.Area.type)
                 NoneAreaProperty(item)
             else if (item.type == PropertyType.Area.type)
                 AreaProperty(item)
         }
-
     }
 }
 
@@ -80,23 +82,30 @@ fun PropertyItem(item: PropertyModel) {
 fun NoneAreaProperty(item: PropertyModel) {
     ConstraintLayout(modifier = Modifier.fillMaxWidth()) {
         val (address, icon, infoRow, days) = createRefs()
-        Icon(painterResource(id = R.drawable.ic_baseline_home_work_24),
+        Icon(
+            painterResource(id = R.drawable.ic_baseline_home_work_24),
             contentDescription = "icon",
             tint = Purple200,
             modifier = Modifier.constrainAs(icon) {
                 top.linkTo(parent.top, 5.dp)
                 start.linkTo(parent.start)
-            })
-        Text(text = "${item.streetAddress}, ${item.municipality}", modifier = Modifier.constrainAs(address) {
-            top.linkTo(icon.top)
-            bottom.linkTo(icon.bottom)
-            start.linkTo(icon.end, 5.dp)
-        })
+            }
+        )
+        Text(
+            text = "${item.streetAddress}, ${item.municipality}",
+            modifier = Modifier.constrainAs(address) {
+                top.linkTo(icon.top)
+                bottom.linkTo(icon.bottom)
+                start.linkTo(icon.end, 5.dp)
+            }
+        )
 
-        Row(modifier = Modifier.constrainAs(infoRow) {
-            top.linkTo(icon.bottom, 5.dp)
-            start.linkTo(icon.start)
-        }) {
+        Row(
+            modifier = Modifier.constrainAs(infoRow) {
+                top.linkTo(icon.bottom, 5.dp)
+                start.linkTo(icon.start)
+            }
+        ) {
             Text(text = item.askingPrice)
             Spacer(modifier = Modifier.width(10.dp))
             Text(text = stringResource(id = R.string.mSquare, item.livingArea))
@@ -105,17 +114,18 @@ fun NoneAreaProperty(item: PropertyModel) {
             Text(text = item.numberOfRooms.toString())
         }
 
-        Text(text = stringResource(
-            id = R.string.days_on_Hemnet,
-            item.daysOnHemnet
-        ),
+        Text(
+            text = stringResource(
+                id = R.string.days_on_Hemnet,
+                item.daysOnHemnet
+            ),
             modifier = Modifier.constrainAs(days) {
                 top.linkTo(infoRow.top)
                 bottom.linkTo(infoRow.bottom)
                 end.linkTo(parent.end)
-            })
+            }
+        )
     }
-
 }
 
 @Composable
@@ -133,7 +143,6 @@ fun AreaProperty(item: PropertyModel) {
         )
     }
 }
-
 
 @Preview
 @Composable
@@ -154,7 +163,6 @@ fun PropertyItemPreview() {
                 type = "Area",
                 rating = "2/5",
                 averagePrice = "1000"
-
             )
         )
     }
