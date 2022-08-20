@@ -46,7 +46,7 @@ class HomeViewModel @Inject constructor(
                     is Resource.Success -> _viewState.update { state ->
                         state.copy(
                             isLoading = false,
-                            homeList = results.data ?: ""
+                            homeList = results.data?.items ?: listOf()
                         )
                     }
                 }
