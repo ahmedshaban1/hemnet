@@ -6,4 +6,5 @@
     <string name="days_on_Hemnet">%d dagar</string>
     <string name="rating">Betyg: %s</string>
     <string name="average_price">SnittPris: %s</string>
+    <string name="monthly_fess">Monthly fees : %s</string>
 </resources>

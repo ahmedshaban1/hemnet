@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -29,7 +30,9 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
     val modalBottomSheetState = rememberModalBottomSheetState(initialValue = ModalBottomSheetValue.Hidden)
     ModalBottomSheetLayout(
         sheetState = modalBottomSheetState,
-        sheetContent = { PropertyDetailsBottomSheet(viewState.selectedProperty) }
+        sheetContent = { PropertyDetailsBottomSheet(viewState.selectedProperty) },
+        sheetShape = RoundedCornerShape(topEnd = 16.dp, topStart = 16.dp)
+
     ) {
         Scaffold(
             modifier = Modifier.fillMaxSize(),
