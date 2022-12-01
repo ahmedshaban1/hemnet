@@ -4,6 +4,7 @@ object Versions {
     const val room ="2.4.2"
     const val daggerHilt = "2.38.1"
     const val hiltPath = "2.38.1"
+
     const val composeNavigation = "2.5.0-alpha03"
     const val espressoTest: String = "3.4.0"
     const val androidTest: String = "1.1.3"
