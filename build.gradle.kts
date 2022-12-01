@@ -14,10 +14,6 @@ buildscript {
     }
 }
 
-allprojects {
-    repositories {
-    }
-}
 
 tasks.register("clean", Delete::class){
     delete(rootProject.buildDir)
